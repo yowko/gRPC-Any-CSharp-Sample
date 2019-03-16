@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC.Message", "src\gRPC.Message\gRPC.Message.csproj", "{1BF060DB-FBFF-4718-8AC4-FCBAD5A64761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC.Client", "src\gRPC.Client\gRPC.Client.csproj", "{2267940F-187A-441E-9456-7C093A2C6D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC.Server", "src\gRPC.Server\gRPC.Server.csproj", "{455ABAB7-C20A-466B-A4CF-77DAB0C7E9B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BF060DB-FBFF-4718-8AC4-FCBAD5A64761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF060DB-FBFF-4718-8AC4-FCBAD5A64761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF060DB-FBFF-4718-8AC4-FCBAD5A64761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF060DB-FBFF-4718-8AC4-FCBAD5A64761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2267940F-187A-441E-9456-7C093A2C6D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2267940F-187A-441E-9456-7C093A2C6D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2267940F-187A-441E-9456-7C093A2C6D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2267940F-187A-441E-9456-7C093A2C6D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455ABAB7-C20A-466B-A4CF-77DAB0C7E9B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455ABAB7-C20A-466B-A4CF-77DAB0C7E9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455ABAB7-C20A-466B-A4CF-77DAB0C7E9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455ABAB7-C20A-466B-A4CF-77DAB0C7E9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
