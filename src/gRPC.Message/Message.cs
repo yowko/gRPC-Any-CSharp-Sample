@@ -24,20 +24,18 @@ namespace gRPC.Message {
     static MessageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1tZXNzYWdlLnByb3RvEgxnUlBDLk1lc3NhZ2UaGWdvb2dsZS9wcm90b2J1",
-            "Zi9hbnkucHJvdG8iKwoOQWRkVXNlclJlcXVlc3QSDAoETmFtZRgBIAEoCRIL",
-            "CgNBZ2UYAiABKAUiEQoPR2V0VXNlcnNSZXF1ZXN0IiEKEURlbGV0ZVVzZXJS",
-            "ZXF1ZXN0EgwKBE5hbWUYASABKAkicAoIUmVzcG9uc2USEQoJSXNTdWNjZXNz",
-            "GAEgASgIEicKCVJlc3VsdE1zZxgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5B",
-            "bnkSKAoKUmVzdWx0TXNncxgDIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnky",
-            "2AEKC2dSUENTZXJ2aWNlEj8KB0FkZFVzZXISHC5nUlBDLk1lc3NhZ2UuQWRk",
-            "VXNlclJlcXVlc3QaFi5nUlBDLk1lc3NhZ2UuUmVzcG9uc2USQQoIR2V0VXNl",
-            "cnMSHS5nUlBDLk1lc3NhZ2UuR2V0VXNlcnNSZXF1ZXN0GhYuZ1JQQy5NZXNz",
-            "YWdlLlJlc3BvbnNlEkUKCkRlbGV0ZVVzZXISHy5nUlBDLk1lc3NhZ2UuRGVs",
-            "ZXRlVXNlclJlcXVlc3QaFi5nUlBDLk1lc3NhZ2UuUmVzcG9uc2VCD6oCDGdS",
-            "UEMuTWVzc2FnZWIGcHJvdG8z"));
+            "Cg1tZXNzYWdlLnByb3RvEgxnUlBDLk1lc3NhZ2UiKwoOQWRkVXNlclJlcXVl",
+            "c3QSDAoETmFtZRgBIAEoCRILCgNBZ2UYAiABKAUiEQoPR2V0VXNlcnNSZXF1",
+            "ZXN0IiEKEURlbGV0ZVVzZXJSZXF1ZXN0EgwKBE5hbWUYASABKAkiRAoIUmVz",
+            "cG9uc2USEQoJSXNTdWNjZXNzGAEgASgIEhEKCVJlc3VsdE1zZxgCIAEoCRIS",
+            "CgpSZXN1bHRNc2dzGAMgAygJMtgBCgtnUlBDU2VydmljZRI/CgdBZGRVc2Vy",
+            "EhwuZ1JQQy5NZXNzYWdlLkFkZFVzZXJSZXF1ZXN0GhYuZ1JQQy5NZXNzYWdl",
+            "LlJlc3BvbnNlEkEKCEdldFVzZXJzEh0uZ1JQQy5NZXNzYWdlLkdldFVzZXJz",
+            "UmVxdWVzdBoWLmdSUEMuTWVzc2FnZS5SZXNwb25zZRJFCgpEZWxldGVVc2Vy",
+            "Eh8uZ1JQQy5NZXNzYWdlLkRlbGV0ZVVzZXJSZXF1ZXN0GhYuZ1JQQy5NZXNz",
+            "YWdlLlJlc3BvbnNlQg+qAgxnUlBDLk1lc3NhZ2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::gRPC.Message.AddUserRequest), global::gRPC.Message.AddUserRequest.Parser, new[]{ "Name", "Age" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::gRPC.Message.GetUsersRequest), global::gRPC.Message.GetUsersRequest.Parser, null, null, null, null),
@@ -462,7 +460,7 @@ namespace gRPC.Message {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Response(Response other) : this() {
       isSuccess_ = other.isSuccess_;
-      resultMsg_ = other.resultMsg_ != null ? other.resultMsg_.Clone() : null;
+      resultMsg_ = other.resultMsg_;
       resultMsgs_ = other.resultMsgs_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -485,22 +483,22 @@ namespace gRPC.Message {
 
     /// <summary>Field number for the "ResultMsg" field.</summary>
     public const int ResultMsgFieldNumber = 2;
-    private global::Google.Protobuf.WellKnownTypes.Any resultMsg_;
+    private string resultMsg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Any ResultMsg {
+    public string ResultMsg {
       get { return resultMsg_; }
       set {
-        resultMsg_ = value;
+        resultMsg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "ResultMsgs" field.</summary>
     public const int ResultMsgsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_resultMsgs_codec
-        = pb::FieldCodec.ForMessage(26, global::Google.Protobuf.WellKnownTypes.Any.Parser);
-    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> resultMsgs_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
+    private static readonly pb::FieldCodec<string> _repeated_resultMsgs_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> resultMsgs_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> ResultMsgs {
+    public pbc::RepeatedField<string> ResultMsgs {
       get { return resultMsgs_; }
     }
 
@@ -518,7 +516,7 @@ namespace gRPC.Message {
         return true;
       }
       if (IsSuccess != other.IsSuccess) return false;
-      if (!object.Equals(ResultMsg, other.ResultMsg)) return false;
+      if (ResultMsg != other.ResultMsg) return false;
       if(!resultMsgs_.Equals(other.resultMsgs_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -527,7 +525,7 @@ namespace gRPC.Message {
     public override int GetHashCode() {
       int hash = 1;
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (resultMsg_ != null) hash ^= ResultMsg.GetHashCode();
+      if (ResultMsg.Length != 0) hash ^= ResultMsg.GetHashCode();
       hash ^= resultMsgs_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -546,9 +544,9 @@ namespace gRPC.Message {
         output.WriteRawTag(8);
         output.WriteBool(IsSuccess);
       }
-      if (resultMsg_ != null) {
+      if (ResultMsg.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteMessage(ResultMsg);
+        output.WriteString(ResultMsg);
       }
       resultMsgs_.WriteTo(output, _repeated_resultMsgs_codec);
       if (_unknownFields != null) {
@@ -562,8 +560,8 @@ namespace gRPC.Message {
       if (IsSuccess != false) {
         size += 1 + 1;
       }
-      if (resultMsg_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ResultMsg);
+      if (ResultMsg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ResultMsg);
       }
       size += resultMsgs_.CalculateSize(_repeated_resultMsgs_codec);
       if (_unknownFields != null) {
@@ -580,11 +578,8 @@ namespace gRPC.Message {
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      if (other.resultMsg_ != null) {
-        if (resultMsg_ == null) {
-          resultMsg_ = new global::Google.Protobuf.WellKnownTypes.Any();
-        }
-        ResultMsg.MergeFrom(other.ResultMsg);
+      if (other.ResultMsg.Length != 0) {
+        ResultMsg = other.ResultMsg;
       }
       resultMsgs_.Add(other.resultMsgs_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -603,10 +598,7 @@ namespace gRPC.Message {
             break;
           }
           case 18: {
-            if (resultMsg_ == null) {
-              resultMsg_ = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(resultMsg_);
+            ResultMsg = input.ReadString();
             break;
           }
           case 26: {

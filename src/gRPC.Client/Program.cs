@@ -2,6 +2,7 @@
 using System.Linq;
 using gRPC.Message;
 using Grpc.Core;
+using Newtonsoft.Json;
 
 namespace gRPC.Client
 {
@@ -23,30 +24,26 @@ namespace gRPC.Client
                 Age = 35
             });
 
-            var addResult =
-                ByteStringUtility.FromByteArray<UserModel>(result.ResultMsg.Value
-                    .ToByteArray());
+            var addResult = JsonConvert.DeserializeObject<UserModel>(result.ResultMsg);
             Console.WriteLine($"Id:{addResult.Id};Name:{addResult.Name};Age:{addResult.Age}");
 
             var usersResult = serviceClient.GetUsers(new GetUsersRequest());
 
-            var users = usersResult.ResultMsgs.Select(a =>
-                ByteStringUtility.FromByteArray<UserModel>(a.Value.ToByteArray()));
+            var users = usersResult.ResultMsgs.Select(a => JsonConvert.DeserializeObject<UserModel>(a));
 
 
             foreach (var user in users)
             {
                 Console.WriteLine($"Id:{user.Id};Name:{user.Name};Age:{user.Age}");
             }
-            
+
 
             var deleteResult = serviceClient.DeleteUser(new DeleteUserRequest()
             {
                 Name = "Yowko"
             });
 
-            var delResult = ByteStringUtility.FromByteArray<string>(deleteResult.ResultMsg.Value
-                .ToByteArray());
+            var delResult = deleteResult.ResultMsg;
             Console.WriteLine($"Msg:{delResult}");
         }
     }

@@ -5,10 +5,10 @@ using Bogus;
 using gRPC.Message;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Newtonsoft.Json;
 
 namespace gRPC.Server
 {
-
     public class gRPCServiceImplforAny : gRPCService.gRPCServiceBase
     {
         public override Task<Response> AddUser(AddUserRequest request, ServerCallContext context)
@@ -38,12 +38,9 @@ namespace gRPC.Server
             var response = new Response
             {
                 IsSuccess = true,
-                ResultMsg = new Any
-                {
-                    Value = Google.Protobuf.ByteString.CopyFrom(ByteStringUtility.ToByteArray(user))
-                }
+                ResultMsg = JsonConvert.SerializeObject(user)
             };
-            
+
             return Task.FromResult(response);
         }
 
@@ -52,10 +49,7 @@ namespace gRPC.Server
             var response = new Response
             {
                 IsSuccess = true,
-                ResultMsg = new Any
-                {
-                    Value = Google.Protobuf.ByteString.CopyFrom(ByteStringUtility.ToByteArray("User has deleted !!"))
-                }
+                ResultMsg = "User has deleted !!"
             };
 
             return Task.FromResult(response);
@@ -68,10 +62,8 @@ namespace gRPC.Server
                 IsSuccess = true
             };
             var users = FakeUserRule().Generate(3);
-            response.ResultMsgs.AddRange(users.Select(a => new Any()
-            {
-                Value = Google.Protobuf.ByteString.CopyFrom(ByteStringUtility.ToByteArray(a))
-            }));
+            response.ResultMsgs.AddRange(users.Select(a => JsonConvert.SerializeObject(a))
+            );
 
             return Task.FromResult(response);
         }

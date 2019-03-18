@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package gRPC.Message;
 option csharp_namespace = "gRPC.Message";
-import "google/protobuf/any.proto";
 
 message AddUserRequest{
     string Name=1;
@@ -17,8 +16,8 @@ message DeleteUserRequest{
 
 message Response{
     bool IsSuccess=1;
-    google.protobuf.Any ResultMsg=2;
-    repeated google.protobuf.Any ResultMsgs=3;
+    string ResultMsg=2;
+    repeated string ResultMsgs=3;
 }
 
 
